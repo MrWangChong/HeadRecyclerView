@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         adapter.notifyDataSetChanged();
+                        //重置上拉加载更多，不重置下回不会触发加载更多
                         mRecyclerView.resetLoadMore();
                     }
                 }, 50);

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main2Activity extends AppCompatActivity {
-    private HeadLayout ll_head;
+    private HeadLayout headLayout;
     private HeadViewPager viewPager;
     private PagerNavigationBar pagerBar;
     private List<View> views;
@@ -28,7 +28,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        ll_head = (HeadLayout) findViewById(R.id.ll_head);
+        headLayout = (HeadLayout) findViewById(R.id.ll_head);
         viewPager = (HeadViewPager) findViewById(R.id.viewPager);
         pagerBar = (PagerNavigationBar) findViewById(R.id.pagerBar);
         List<String> titles = new ArrayList<>();
@@ -64,14 +64,14 @@ public class Main2Activity extends AppCompatActivity {
                     }
             }
             recyclerView.setAdapter(new TextAdapter(this, infos));
-            recyclerView.setHeadView(ll_head);
+            recyclerView.setHeadView(headLayout);
             views.add(recyclerView);
         }
         //目前必须设置缓存为所有
         viewPager.setOffscreenPageLimit(views.size());
         viewPager.setAdapter(new ViewPagerAdapter(views, titles));
         //如果有需要滑动的HeadView需要设置这个，没有就不用
-        viewPager.setHeadView(ll_head);
+        viewPager.setHeadView(headLayout);
         // 关联
         pagerBar.setViewPager(viewPager);
 

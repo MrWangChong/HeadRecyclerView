@@ -27,7 +27,7 @@ dependencies {
         //屏蔽第三方库的原生库依赖，使用自己的
         exclude group: 'com.android.support', module: 'appcompat-v7'
     })
-    compile project(':recyclerview')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.MrWangChong:HeadRecyclerView:1.0.0'
 }
